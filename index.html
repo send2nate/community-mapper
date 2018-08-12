@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mariposa Creek Parkway Plan - Interactive Map</title>
+
+	<!-- BEGIN LINKS -->
+
+	<link href="https://fonts.googleapis.com/css?family=Anton|Quicksand" rel="stylesheet">  
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+   <link rel="stylesheet" type="text/css" href="communitymap.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <!-- END LINKS -->
+
+
+   <!-- BEGIN BOOTSTRAP NAVBAR -->
+   
+	   <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+	  	<a class="navbar-brand" href="#"><img id="brand-logo-quad" src="assets\quadrigalogoweb.png"></a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  	</button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav nav nav-tabs ml-auto">
+	      <li class="nav-item py-0">
+	        <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item py-0">
+	        <a class="nav-link" href="#">Legend</a>
+	      </li>
+	      <li class="nav-item py-0">
+	        <a class="nav-link" href="#">Contact</a>
+	      </li>
+	     
+	    </ul>
+	
+	</nav>
+</div>
+
+<!-- END BOOTSTRAP NAVBAR -->
+
+</head>
+<body>
+<!-- BEGIN SIDENAV POP-OUT -->
+
+	  <div id="mySidenav" class="sidenav">
+	  	<h1>What's this about?</h1>
+	  	<p class="p-nav">Zoom and Pan on the map to explore the Mariposa Creek Parkway Plan proposed improvedments.</p>
+		  <div id="button-container">
+		  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i id=#toggle-button class="fas fa-arrow-circle-left"></i></a> -->
+		  <a href="#"><button type="button" class="btn btn-light">See Proposed Nodes</button></a>
+		  <a href="#"><button type="button" class="btn btn-light">See Proposed Parkway Trail</button></a>
+		  <a href="#"><button type="button" class="btn btn-light">See Proposed Secondary Trails</button></a>
+		  </div>
+	</div>
+
+<!-- END SIDENAV POP-OUT -->
+
+<!-- BEGIN SIDENAV POP-OUT BUTTON ENABLER -->
+<div id="enabler-container">
+	<span id="nav-enabler" style="font-size:40px;cursor:pointer"><i class="fas fa-arrow-circle-right bounce"></i></span>
+	<!-- onclick="openNav() -->
+</div>	
+<!-- END  SIDENAV POP-OUT BUTTON ENABLER  -->
+
+<!-- BEGIN LEAFLET SCRIPT PACKAGE -->
+
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+   integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+   crossorigin=""></script>
+
+<!-- END LEAFLET SCRIPT PACKAGE -->
+
+<main>
+	<div id="header">
+		<div class="map-h1"><h1>Mariposa Creek Parkway Plan</h1></div>
+	</div>
+
+<!-- BEGIN LEAFLET MAP CONTAINER -->
+	
+	<div id="mapid" class="custom-popup">
+		<script type="text/javascript">
+			
+	var mymap = L.map('mapid').setView([37.489089, -119.968628], 15);
+
+	// var north = L.control({
+	// 	position: "bottomright"
+	// });
+
+	// north.onAdd = function(map) {
+	// 	var div = L.DomUtil.create("div", "info legend");
+	// 	div.innerHTML = '<i class="fas fa-arrow-up"></i>';
+	// 	return div;
+	// };
+
+	// north.addTo(map);
+
+	var circle = L.circle([37.489089, -119.968627],{
+			color: 'red',
+			    fillColor: '#f03',
+			    fillOpacity: 0.5,
+			    radius: 20
+			}).addTo(mymap).bindPopup("I am a the proposed Transit Center location.");
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic2VuZDJuYXRlIiwiYSI6ImNqa2swcnUxeDFsbWczcW54MDg2bGU0MTEifQ.mHZTH9p7XcWD__gzcLVoAg', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
+
+
+		</script>
+	</div>
+
+<!-- END LEAFLET MAP CONTAINER -->
+
+	<div id="legend-container">
+
+		<div class="map-h1"><h1>Legend</h1></div>
+		
+	</div>
+</main>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="communitymap.js"></script>
+</body>
+</html>

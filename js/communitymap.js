@@ -1,6 +1,6 @@
 console.log("connected");
 
-$('.fas').click(function (){
+$('.fa').click(function (){
 
 		$(this).toggleClass("fa-arrow-circle-left fa-arrow-circle-right");
 		$(this).toggleClass("movefas");

@@ -40,7 +40,7 @@
 }
 
 
-.fas {
+.fa {
 	display:block;
 	position: absolute;
 	top:10px;
@@ -163,7 +163,7 @@
 
 
 
-#mapid {
+#map {
 	z-index: 0;
 	margin: 10px auto;
 	height:500px;

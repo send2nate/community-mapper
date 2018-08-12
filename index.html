@@ -48,7 +48,6 @@
 	  	<h1>What's this about?</h1>
 	  	<p class="p-nav">Zoom and Pan on the map to explore the Mariposa Creek Parkway Plan proposed improvedments.</p>
 		  <div id="button-container">
-		  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i id=#toggle-button class="fas fa-arrow-circle-left"></i></a> -->
 		  <a href="#"><button type="button" class="btn btn-light">See Proposed Nodes</button></a>
 		  <a href="#"><button type="button" class="btn btn-light">See Proposed Parkway Trail</button></a>
 		  <a href="#"><button type="button" class="btn btn-light">See Proposed Secondary Trails</button></a>
@@ -60,7 +59,6 @@
 <!-- BEGIN SIDENAV POP-OUT BUTTON ENABLER -->
 <div id="enabler-container">
 	<span id="nav-enabler" style="font-size:40px;cursor:pointer"><i class="fas fa-arrow-circle-right bounce"></i></span>
-	<!-- onclick="openNav() -->
 </div>	
 <!-- END  SIDENAV POP-OUT BUTTON ENABLER  -->
 
@@ -83,18 +81,6 @@
 		<script type="text/javascript">
 			
 	var mymap = L.map('mapid').setView([37.489089, -119.968628], 15);
-
-	// var north = L.control({
-	// 	position: "bottomright"
-	// });
-
-	// north.onAdd = function(map) {
-	// 	var div = L.DomUtil.create("div", "info legend");
-	// 	div.innerHTML = '<i class="fas fa-arrow-up"></i>';
-	// 	return div;
-	// };
-
-	// north.addTo(map);
 
 	var circle = L.circle([37.489089, -119.968627],{
 			color: 'red',

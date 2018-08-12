@@ -9,3 +9,13 @@ $('.fa').click(function (){
 	
 });
 
+$("#node-layer").click(function(event) {
+    event.preventDefault();
+    if(map.hasLayer(layer_RecNodes_10)) {
+        $(this).removeClass('selected');
+        map.removeLayer(layer_RecNodes_10);
+    } else {
+        map.addLayer(layer_RecNodes_10);        
+        $(this).addClass('selected');
+   }
+});

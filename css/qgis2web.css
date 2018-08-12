@@ -23,8 +23,9 @@
             padding-right: 10px;
         }
         .leaflet-popup-content {
-            width:auto !important;
+            width:200px !important;
             padding-right:10px;
+            text-align: center;
         }
         .leaflet-tooltip {
             background: none;

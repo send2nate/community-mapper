@@ -59,3 +59,9 @@ $(".bike-lane-layer").click(function(event) {
 });
 
 
+map.on('popupopen', function(e) {
+    var px = map.project(e.popup._latlng); // find the pixel location on the map where the popup anchor is
+    px.y -= e.popup._container.clientHeight/2 // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
+    map.panTo(map.unproject(px),{animate: true}); // pan to new center
+});
+

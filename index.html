@@ -27,6 +27,7 @@
    
 	   <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
 	  	<a class="navbar-brand" href="#"><img id="brand-logo-quad" src="assets\quadrigalogoweb.png"></a>
+	  	<a class="navbar-brand" href="#"><img id="brand-logo-mariposa" src="assets\mariposa_logo.png"></a>
 	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  	</button>
@@ -192,19 +193,13 @@
         // MODIFY POP-UP CONTENT HERE
 
         function pop_MCP_BikeLaneClassIII_2(feature, layer) { 
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                </table>\
-                <h4>Proposed Class III Bike Lane</h4>\
+            var popupContent = '\
+                <h5>Proposed Class III Bike Lane</h5>\
                 <div class="feedback-box">\
-                <label for="feedback">What do you think?</label>\
-                <textarea id="feedback" name="feedback"\
-                rows="3" cols="20" maxlength="200"\
-                  wrap="hard">\
-                  </textarea>\
-                  </div>\
+                <img id="mapimg" src="assets/class3bikelane200px.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
                 <input type="submit"></input>\
                 ';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -235,14 +230,15 @@
         bounds_group.addLayer(layer_MCP_BikeLaneClassIII_2);
         map.addLayer(layer_MCP_BikeLaneClassIII_2);
         function pop_MCP_BikeLaneClassII_3(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LENGTH'] !== null ? Autolinker.link(String(feature.properties['LENGTH'])) : '') + '</td>\
-                    </tr>\
-                </table>';
+            var popupContent = '\
+                <h5>Proposed Class II Bike Lane</h5>\
+                <div class="feedback-box">\
+                <img id="mapimg" src="assets/class2bikelane.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
+                <input type="submit"></input>\
+                ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
@@ -270,14 +266,15 @@
         bounds_group.addLayer(layer_MCP_BikeLaneClassII_3);
         map.addLayer(layer_MCP_BikeLaneClassII_3);
         function pop_MCP_ShoppingCenters_4(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['AREA'] !== null ? Autolinker.link(String(feature.properties['AREA'])) : '') + '</td>\
-                    </tr>\
-                </table>';
+            var popupContent = '\
+                <h5>Proposed Class II Bike Lane</h5>\
+                <div class="feedback-box">\
+                <img id="mapimg" src="assets/class2bikelane.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
+                <input type="submit"></input>\
+                ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
@@ -346,14 +343,15 @@
         bounds_group.addLayer(layer_MCP_Schools_5);
         map.addLayer(layer_MCP_Schools_5);
         function pop_MCP_ProposedBikePathClassI_6(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LENGTH'] !== null ? Autolinker.link(String(feature.properties['LENGTH'])) : '') + '</td>\
-                    </tr>\
-                </table>';
+            var popupContent = '\
+                <h5>Proposed Class I Bike Lane</h5>\
+                <div class="feedback-box">\
+                <img id="mapimg" src="assets/class1bikelane.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
+                <input type="submit"></input>\
+                ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
@@ -381,16 +379,15 @@
         bounds_group.addLayer(layer_MCP_ProposedBikePathClassI_6);
         map.addLayer(layer_MCP_ProposedBikePathClassI_6);
         function pop_MCP_PrimaryTrailway10_7(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">id</th>\
-                        <td>' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">LENGTH</th>\
-                        <td>' + (feature.properties['LENGTH'] !== null ? Autolinker.link(String(feature.properties['LENGTH'])) : '') + '</td>\
-                    </tr>\
-                </table>';
+            var popupContent = '\
+                <h5>Proposed Primary Trail</h5>\
+                <div class="feedback-box">\
+                <img id="mapimg" src="assets/asphalt_trails.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
+                <input type="submit"></input>\
+                ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
@@ -418,15 +415,16 @@
         bounds_group.addLayer(layer_MCP_PrimaryTrailway10_7);
         map.addLayer(layer_MCP_PrimaryTrailway10_7);
         function pop_MCP_ProposedSecondaryDGTrail_8(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LENGTH'] !== null ? Autolinker.link(String(feature.properties['LENGTH'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popupContent = '\
+                <h5>Proposed Secondary D.G. Trail</h5>\
+                <div class="feedback-box">\
+                <img id="mapimg" src="assets/dg_trail.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
+                <input type="submit"></input>\
+                ';
+            layer.bindPopup(popupContent, {maxHeight: 500});
         }
 
         function style_MCP_ProposedSecondaryDGTrail_8_0() {
@@ -453,14 +451,15 @@
         bounds_group.addLayer(layer_MCP_ProposedSecondaryDGTrail_8);
         map.addLayer(layer_MCP_ProposedSecondaryDGTrail_8);
         function pop_MCP_ProposedDGTrail_9(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LENGTH'] !== null ? Autolinker.link(String(feature.properties['LENGTH'])) : '') + '</td>\
-                    </tr>\
-                </table>';
+            var popupContent = '\
+                <h5>Proposed D.G. Trail</h5>\
+                <div class="feedback-box">\
+                <img id="mapimg" src="assets/dg_trail.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
+                <input type="submit"></input>\
+                ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
@@ -488,15 +487,16 @@
         bounds_group.addLayer(layer_MCP_ProposedDGTrail_9);
         map.addLayer(layer_MCP_ProposedDGTrail_9);
         function pop_RecNodes_10(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['FEATURE'] !== null ? Autolinker.link(String(feature.properties['FEATURE'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popupContent = '\
+                <h5>Proposed D.G. Trail</h5>\
+                <div class="feedback-box">\
+                <img id="mapimg" src="assets/dg_trail.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
+                <input type="submit"></input>\
+                ';
+            layer.bindPopup(popupContent, {maxHeight: 450});
         }
 
         function style_RecNodes_10_0() {

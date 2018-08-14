@@ -23,9 +23,13 @@
             padding-right: 10px;
         }
         .leaflet-popup-content {
-            width:200px !important;
-            padding-right:10px;
+            width:260px !important;
+            padding-right:0px;
             text-align: center;
+        }
+        .leaflet-popup-content img { 
+            margin: 0 auto; 
+            display:block; 
         }
         .leaflet-tooltip {
             background: none;

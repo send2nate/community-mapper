@@ -27,7 +27,7 @@ textarea {
 }
 
 #brand-logo-mariposa {
-	max-width:100px;
+	max-width:80px;
   	filter: gray; /* IE6-9 */
   	-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
   	filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
@@ -182,7 +182,7 @@ textarea {
 #map {
 	z-index: 0;
 	margin: 10px auto;
-	height:700px;
+	height:600px;
 	width: 900px;
 	border-radius: 20px;
 	box-shadow: 3px 3px 3px rgba(0,0,0, 0.2);

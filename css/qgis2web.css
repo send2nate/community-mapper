@@ -24,12 +24,8 @@
         }
         .leaflet-popup-content {
             width:260px !important;
-            padding-right:0px;
+            padding-right:0;
             text-align: center;
-        }
-        .leaflet-popup-content img { 
-            margin: 0 auto; 
-            display:block; 
         }
         .leaflet-tooltip {
             background: none;
@@ -111,5 +107,9 @@
             text-indent: 0%;
         }
         .leaflet-control-layers-toggle {
+            background-color: #005aa7 !important;
+        }
+
+        .leaflet-control-layers .leaflet-control-layers-expanded .leaflet-control {
             background-color: #005aa7 !important;
         }

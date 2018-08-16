@@ -1,96 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-	
-
-	<!-- BEGIN LINKS -->
-
-   		<meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
         <link rel="stylesheet" type="text/css" href="css/communitymap.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
-		<link href="https://fonts.googleapis.com/css?family=Anton|Quicksand" rel="stylesheet">  
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-   <!-- END LINKS -->
-   
-<title>Mariposa Creek Parkway Plan - Interactive Map</title>
+        <link href="https://fonts.googleapis.com/css?family=Anton|Quicksand" rel="stylesheet">  
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title>Mariposa Creek Parkway Plan - Interactive Map</title>
 
    <!-- BEGIN BOOTSTRAP NAVBAR -->
    
-	   <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
-	  	<a class="navbar-brand" href="#"><img id="brand-logo-quad" src="assets\quadrigalogoweb.png"></a>
-	  	<a class="navbar-brand" href="#"><img id="brand-logo-mariposa" src="assets\mariposa_logo.png"></a>
-	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  	</button>
-	  <div class="collapse navbar-collapse" id="navbarNav">
-	    <ul class="navbar-nav nav nav-tabs ml-auto">
-	      <li class="nav-item py-0">
-	        <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item py-0">
-	        <a class="nav-link" href="#">Legend</a>
-	      </li>
-	      <li class="nav-item py-0">
-	        <a class="nav-link" href="#">Contact</a>
-	      </li>
-	     
-	    </ul>
-	
-	</nav>
-</div>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+        <a class="navbar-brand" href="#"><img id="brand-logo-quad" src="assets\quadrigalogoweb.png"></a>
+        <a class="navbar-brand" href="#"><img id="brand-logo-mariposa" src="assets\mariposa_logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav ml-auto py-0">
+          <li class="nav-item py-0">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item py-0">
+            <a class="nav-link" href="#">Instructions</a>
+          </li>
+          <li class="nav-item py-0">
+            <a class="nav-link" href="#">Questions?</a>
+          </li>
+         
+        </ul>
+    
+    </nav>
+    </div>
+<!-- 
+    <div class="ui inverted menu">
+  <a class="active item">
+    Home
+  </a>
+  <a class="item">
+    Messages
+  </a>
+  <a class="item">
+    Friends
+  </a>
+</div> -->
 
 <!-- END BOOTSTRAP NAVBAR -->
 
-</head>
-<body>
+    </head>
+    <body>
+
 <!-- BEGIN SIDENAV POP-OUT -->
 
-	  <div id="mySidenav" class="sidenav">
-	  	<h1>What's this about?</h1>
-	  	<p class="p-nav">Zoom and Pan on the map to explore the Mariposa Creek Parkway Plan proposed improvedments.</p>
-		  <div id="button-container">
-		  <a id="node-layer" href="#"><button type="button" class="btn btn-light">Proposed Nodes</button></a>
-		  <a id="primary-trail-layer" href="#"><button type="button" class="btn btn-light">Proposed Parkway Trail</button></a>
-		  <a id="secondary-trail-layer" href="#"><button type="button" class="btn btn-light">Proposed Secondary Trails</button></a>
-		  <a href="#"><button type="button" class="btn btn-light bike-lane-layer">Proposed Bicycle Lanes</button></a>
-		  </div>
-	</div>
+      <div id="mySidenav" class="sidenav">
+        <h1>What's this about?</h1>
+        <p class="p-nav">Zoom and Pan on the map to explore the Mariposa Creek Parkway Plan proposed improvedments.</p>
+          <div id="button-container">
+          <a id="node-layer" href="#"><button type="button" class="btn btn-light">Proposed Nodes</button></a>
+          <a id="primary-trail-layer" href="#"><button type="button" class="btn btn-light">Proposed Parkway Trail</button></a>
+          <a id="secondary-trail-layer" href="#"><button type="button" class="btn btn-light">Proposed Secondary Trails</button></a>
+          <a href="#"><button type="button" class="btn btn-light bike-lane-layer">Proposed Bicycle Lanes</button></a>
+          </div>
+    </div>
 
 <!-- END SIDENAV POP-OUT -->
 
 <!-- BEGIN SIDENAV POP-OUT BUTTON ENABLER -->
 <div id="enabler-container">
-	<span id="nav-enabler" style="font-size:40px;cursor:pointer"><i class="fa fa-arrow-circle-right bounce"></i></span>
-</div>	
+    <span id="nav-enabler" style="font-size:40px;cursor:pointer"><i class="fa fa-arrow-circle-right bounce"></i></span>
+</div>  
 <!-- END  SIDENAV POP-OUT BUTTON ENABLER  -->
 
-<!-- BEGIN LEAFLET SCRIPT PACKAGE -->
-
-<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-   integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-   crossorigin=""></script>
-
-<!-- END LEAFLET SCRIPT PACKAGE -->
-
-<main>
-	<div id="header">
-		<div class="map-h1"><h1>Mariposa Creek Parkway Plan</h1></div>
-	</div>
-
-<!-- BEGIN LEAFLET MAP CONTAINER -->
-	
-	<div id="map" class="custom-popup">
-		<script src="js/qgis2web_expressions.js"></script>
+        <div id="map"  class="custom-popup">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
+        <script src="js/leaflet-svg-shape-markers.min.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -99,37 +103,18 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/MariposaCreekParkwayExtent_1.js"></script>
-        <script src="data/MCP_BikeLaneClassIII_2.js"></script>
-        <script src="data/MCP_BikeLaneClassII_3.js"></script>
-        <script src="data/MCP_ShoppingCenters_4.js"></script>
-        <script src="data/MCP_Schools_5.js"></script>
-        <script src="data/MCP_ProposedBikePathClassI_6.js"></script>
-        <script src="data/MCP_PrimaryTrailway10_7.js"></script>
-        <script src="data/MCP_ProposedSecondaryDGTrail_8.js"></script>
-        <script src="data/MCP_ProposedDGTrail_9.js"></script>
-        <script src="data/RecNodes_10.js"></script>
-<script>
-        var m2px = 1;
-        function newM2px() {
-            var centerLatLng = map.getCenter();
-            var pointC = map.latLngToContainerPoint(centerLatLng);
-            var pointX = [pointC.x + 100, pointC.y];
-
-            var latLngC = map.containerPointToLatLng(pointC);
-            var latLngX = map.containerPointToLatLng(pointX);
-
-            var distanceX = latLngC.distanceTo(latLngX)/100;
-
-            reciprocal = 1 / distanceX;
-            m2px = reciprocal;
-        }
-        function geoStyle(m) {
-            return Math.ceil(m * m2px);
-        }
+        <script src="data/MariposaCreekParkwayExtents_2.js"></script>
+        <script src="data/ProposedBikeLaneClassIII_3.js"></script>
+        <script src="data/ProposedBikeLaneClassII_4.js"></script>
+        <script src="data/ProposedBikePathClassI_5.js"></script>
+        <script src="data/PrimaryTrailway_6.js"></script>
+        <script src="data/ProposedSecondaryDGTrail_7.js"></script>
+        <script src="data/ProposedDGTrail_8.js"></script>
+        <script src="data/RecreationNodes_9.js"></script>
+              <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:17, minZoom:10
-        }).fitBounds([[37.449347808416285,-119.97516205394426],[37.48873168174518,-119.92509595159251]]);
+        })
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         var measureControl = new L.Control.Measure({
@@ -146,107 +131,43 @@
         .className += ' fas fa-ruler';
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
         }
-        var overlay_GoogleAerial_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+        var overlay_OpenStreetMap_0 = L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             opacity: 1.0
         });
-        overlay_GoogleAerial_0.addTo(map);
-        map.addLayer(overlay_GoogleAerial_0);
-        function pop_MariposaCreekParkwayExtent_1(feature, layer) {
+        overlay_OpenStreetMap_0.addTo(map);
+        map.addLayer(overlay_OpenStreetMap_0);
+        var overlay_AerialMap_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            opacity: 1.0
+        });
+        overlay_AerialMap_1.addTo(map);
+        map.addLayer(overlay_AerialMap_1);
+        function pop_MariposaCreekParkwayExtents_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td colspan="2">' + (feature.properties['length_km'] !== null ? Autolinker.link(String(feature.properties['length_km'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['length_mi'] !== null ? Autolinker.link(String(feature.properties['length_mi'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <td colspan="2">' + (feature.properties['LENGTH'] !== null ? Autolinker.link(String(feature.properties['LENGTH'])) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {
-            	maxHeight: 400,
-            });
-        }
-
-        function style_MariposaCreekParkwayExtent_1_0() {
-            return {
-                pane: 'pane_MariposaCreekParkwayExtent_1',
-                opacity: 0.9,
-                color: 'rgba(72,123,182,1.0)',
-                dashArray: '8 12',
-                lineCap: 'round',
-                lineJoin: 'round',
-                weight: geoStyle(15.0),
-                fillOpacity: 1,
-            }
-        }
-        map.createPane('pane_MariposaCreekParkwayExtent_1');
-        map.getPane('pane_MariposaCreekParkwayExtent_1').style.zIndex = 401;
-        map.getPane('pane_MariposaCreekParkwayExtent_1').style['mix-blend-mode'] = 'normal';
-        var layer_MariposaCreekParkwayExtent_1 = new L.geoJson(json_MariposaCreekParkwayExtent_1, {
-            attribution: '<a href=""></a>',
-            pane: 'pane_MariposaCreekParkwayExtent_1',
-            onEachFeature: pop_MariposaCreekParkwayExtent_1,
-            style: style_MariposaCreekParkwayExtent_1_0,
-        });
-        bounds_group.addLayer(layer_MariposaCreekParkwayExtent_1);
-        map.addLayer(layer_MariposaCreekParkwayExtent_1);
-
-        // MODIFY POP-UP CONTENT HERE
-
-        function pop_MCP_BikeLaneClassIII_2(feature, layer) { 
-            var popupContent = '\
-                <h5>Proposed Class III Bike Lane</h5>\
-                <div class="feedback-box">\
-                <img id="mapimg" src="assets/class3bikelane200px.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
-                <label for="feedback">Submit your comments below:</label>\
-                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
-                </div>\
-                <input type="submit"></input>\
-                ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-
-        function style_MCP_BikeLaneClassIII_2_0() {
+        function style_MariposaCreekParkwayExtents_2_0() {
             return {
-                pane: 'pane_MCP_BikeLaneClassIII_2',
+                pane: 'pane_MariposaCreekParkwayExtents_2',
                 opacity: 1,
-                color: 'rgba(246,168,31,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 6.0,
-                fillOpacity: 0,
-            }
-        }
-        map.createPane('pane_MCP_BikeLaneClassIII_2');
-        map.getPane('pane_MCP_BikeLaneClassIII_2').style.zIndex = 402;
-        map.getPane('pane_MCP_BikeLaneClassIII_2').style['mix-blend-mode'] = 'normal';
-        var layer_MCP_BikeLaneClassIII_2 = new L.geoJson(json_MCP_BikeLaneClassIII_2, {
-            attribution: '<a href=""></a>',
-            pane: 'pane_MCP_BikeLaneClassIII_2',
-            onEachFeature: pop_MCP_BikeLaneClassIII_2,
-            style: style_MCP_BikeLaneClassIII_2_0,
-        });
-        bounds_group.addLayer(layer_MCP_BikeLaneClassIII_2);
-        map.addLayer(layer_MCP_BikeLaneClassIII_2);
-        function pop_MCP_BikeLaneClassII_3(feature, layer) {
-            var popupContent = '\
-                <h5>Proposed Class II Bike Lane</h5>\
-                <div class="feedback-box">\
-                <img id="mapimg" src="assets/class2bikelane.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
-                <label for="feedback">Submit your comments below:</label>\
-                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
-                </div>\
-                <input type="submit"></input>\
-                ';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_MCP_BikeLaneClassII_3_0() {
-            return {
-                pane: 'pane_MCP_BikeLaneClassII_3',
-                opacity: 1,
-                color: 'rgba(207,100,207,1.0)',
+                color: 'rgba(255,255,255,0.8)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -254,18 +175,74 @@
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_MCP_BikeLaneClassII_3');
-        map.getPane('pane_MCP_BikeLaneClassII_3').style.zIndex = 403;
-        map.getPane('pane_MCP_BikeLaneClassII_3').style['mix-blend-mode'] = 'normal';
-        var layer_MCP_BikeLaneClassII_3 = new L.geoJson(json_MCP_BikeLaneClassII_3, {
+        function style_MariposaCreekParkwayExtents_2_1() {
+            return {
+                pane: 'pane_MariposaCreekParkwayExtents_2',
+                opacity: 1,
+                color: 'rgba(72,123,182,0.8)',
+                dashArray: '5 10',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 4.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_MariposaCreekParkwayExtents_2');
+        map.getPane('pane_MariposaCreekParkwayExtents_2').style.zIndex = 402;
+        map.getPane('pane_MariposaCreekParkwayExtents_2').style['mix-blend-mode'] = 'normal';
+        var layer_MariposaCreekParkwayExtents_2 = new L.geoJson.multiStyle(json_MariposaCreekParkwayExtents_2, {
             attribution: '<a href=""></a>',
-            pane: 'pane_MCP_BikeLaneClassII_3',
-            onEachFeature: pop_MCP_BikeLaneClassII_3,
-            style: style_MCP_BikeLaneClassII_3_0,
+            pane: 'pane_MariposaCreekParkwayExtents_2',
+            onEachFeature: pop_MariposaCreekParkwayExtents_2,
+            styles: [style_MariposaCreekParkwayExtents_2_0,style_MariposaCreekParkwayExtents_2_1,]
         });
-        bounds_group.addLayer(layer_MCP_BikeLaneClassII_3);
-        map.addLayer(layer_MCP_BikeLaneClassII_3);
-        function pop_MCP_ShoppingCenters_4(feature, layer) {
+        bounds_group.addLayer(layer_MariposaCreekParkwayExtents_2);
+        map.addLayer(layer_MariposaCreekParkwayExtents_2);
+        function pop_ProposedBikeLaneClassIII_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ProposedBikeLaneClassIII_3_0() {
+            return {
+                pane: 'pane_ProposedBikeLaneClassIII_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+            }
+        }
+        function style_ProposedBikeLaneClassIII_3_1() {
+            return {
+                pane: 'pane_ProposedBikeLaneClassIII_3',
+                opacity: 1,
+                color: 'rgba(246,168,31,1.0)',
+                dashArray: '5 10',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 6.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_ProposedBikeLaneClassIII_3');
+        map.getPane('pane_ProposedBikeLaneClassIII_3').style.zIndex = 403;
+        map.getPane('pane_ProposedBikeLaneClassIII_3').style['mix-blend-mode'] = 'normal';
+        var layer_ProposedBikeLaneClassIII_3 = new L.geoJson.multiStyle(json_ProposedBikeLaneClassIII_3, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_ProposedBikeLaneClassIII_3',
+            onEachFeature: pop_ProposedBikeLaneClassIII_3,
+            styles: [style_ProposedBikeLaneClassIII_3_0,style_ProposedBikeLaneClassIII_3_1,]
+        });
+        bounds_group.addLayer(layer_ProposedBikeLaneClassIII_3);
+        map.addLayer(layer_ProposedBikeLaneClassIII_3);
+        function pop_ProposedBikeLaneClassII_4(feature, layer) {
             var popupContent = '\
                 <h5>Proposed Class II Bike Lane</h5>\
                 <div class="feedback-box">\
@@ -278,71 +255,42 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MCP_ShoppingCenters_4_0() {
+        function style_ProposedBikeLaneClassII_4_0() {
             return {
-                pane: 'pane_MCP_ShoppingCenters_4',
-                stroke: false, 
-                fill: true,
-                fillOpacity: 0.8,
-                fillColor: 'rgba(255,198,179,1.0)',
-            }
-        }
-        map.createPane('pane_MCP_ShoppingCenters_4');
-        map.getPane('pane_MCP_ShoppingCenters_4').style.zIndex = 404;
-        map.getPane('pane_MCP_ShoppingCenters_4').style['mix-blend-mode'] = 'normal';
-        var layer_MCP_ShoppingCenters_4 = new L.geoJson(json_MCP_ShoppingCenters_4, {
-            attribution: '<a href=""></a>',
-            pane: 'pane_MCP_ShoppingCenters_4',
-            onEachFeature: pop_MCP_ShoppingCenters_4,
-            style: style_MCP_ShoppingCenters_4_0,
-        });
-        bounds_group.addLayer(layer_MCP_ShoppingCenters_4);
-        map.addLayer(layer_MCP_ShoppingCenters_4);
-        function pop_MCP_Schools_5(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME'] !== null ? Autolinker.link(String(feature.properties['NAME'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_MCP_Schools_5_0() {
-            return {
-                pane: 'pane_MCP_Schools_5',
-                radius: 4.0,
+                pane: 'pane_ProposedBikeLaneClassII_4',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(255,255,255,1.0)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(196,60,57,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
             }
         }
-        map.createPane('pane_MCP_Schools_5');
-        map.getPane('pane_MCP_Schools_5').style.zIndex = 405;
-        map.getPane('pane_MCP_Schools_5').style['mix-blend-mode'] = 'normal';
-        var layer_MCP_Schools_5 = new L.geoJson(json_MCP_Schools_5, {
+        function style_ProposedBikeLaneClassII_4_1() {
+            return {
+                pane: 'pane_ProposedBikeLaneClassII_4',
+                opacity: 1,
+                color: 'rgba(207,100,207,1.0)',
+                dashArray: '5 10',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_ProposedBikeLaneClassII_4');
+        map.getPane('pane_ProposedBikeLaneClassII_4').style.zIndex = 404;
+        map.getPane('pane_ProposedBikeLaneClassII_4').style['mix-blend-mode'] = 'normal';
+        var layer_ProposedBikeLaneClassII_4 = new L.geoJson.multiStyle(json_ProposedBikeLaneClassII_4, {
             attribution: '<a href=""></a>',
-            pane: 'pane_MCP_Schools_5',
-            onEachFeature: pop_MCP_Schools_5,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_MCP_Schools_5_0(feature));
-            },
+            pane: 'pane_ProposedBikeLaneClassII_4',
+            onEachFeature: pop_ProposedBikeLaneClassII_4,
+            styles: [style_ProposedBikeLaneClassII_4_0,style_ProposedBikeLaneClassII_4_1,]
         });
-        bounds_group.addLayer(layer_MCP_Schools_5);
-        map.addLayer(layer_MCP_Schools_5);
-        function pop_MCP_ProposedBikePathClassI_6(feature, layer) {
+        bounds_group.addLayer(layer_ProposedBikeLaneClassII_4);
+        map.addLayer(layer_ProposedBikeLaneClassII_4);
+        function pop_ProposedBikePathClassI_5(feature, layer) {
             var popupContent = '\
                 <h5>Proposed Class I Bike Lane</h5>\
                 <div class="feedback-box">\
@@ -355,30 +303,42 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MCP_ProposedBikePathClassI_6_0() {
+        function style_ProposedBikePathClassI_5_0() {
             return {
-                pane: 'pane_MCP_ProposedBikePathClassI_6',
+                pane: 'pane_ProposedBikePathClassI_5',
                 opacity: 1,
-                color: 'rgba(84,176,74,1.0)',
+                color: 'rgba(255,255,255,1.0)',
                 dashArray: '',
-                lineCap: 'round',
-                lineJoin: 'round',
-                weight: 6.0,
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_MCP_ProposedBikePathClassI_6');
-        map.getPane('pane_MCP_ProposedBikePathClassI_6').style.zIndex = 406;
-        map.getPane('pane_MCP_ProposedBikePathClassI_6').style['mix-blend-mode'] = 'normal';
-        var layer_MCP_ProposedBikePathClassI_6 = new L.geoJson(json_MCP_ProposedBikePathClassI_6, {
+        function style_ProposedBikePathClassI_5_1() {
+            return {
+                pane: 'pane_ProposedBikePathClassI_5',
+                opacity: 1,
+                color: 'rgba(84,176,74,1.0)',
+                dashArray: '5 10',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 4.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_ProposedBikePathClassI_5');
+        map.getPane('pane_ProposedBikePathClassI_5').style.zIndex = 405;
+        map.getPane('pane_ProposedBikePathClassI_5').style['mix-blend-mode'] = 'normal';
+        var layer_ProposedBikePathClassI_5 = new L.geoJson.multiStyle(json_ProposedBikePathClassI_5, {
             attribution: '<a href=""></a>',
-            pane: 'pane_MCP_ProposedBikePathClassI_6',
-            onEachFeature: pop_MCP_ProposedBikePathClassI_6,
-            style: style_MCP_ProposedBikePathClassI_6_0,
+            pane: 'pane_ProposedBikePathClassI_5',
+            onEachFeature: pop_ProposedBikePathClassI_5,
+            styles: [style_ProposedBikePathClassI_5_0,style_ProposedBikePathClassI_5_1,]
         });
-        bounds_group.addLayer(layer_MCP_ProposedBikePathClassI_6);
-        map.addLayer(layer_MCP_ProposedBikePathClassI_6);
-        function pop_MCP_PrimaryTrailway10_7(feature, layer) {
+        bounds_group.addLayer(layer_ProposedBikePathClassI_5);
+        map.addLayer(layer_ProposedBikePathClassI_5);
+        function pop_PrimaryTrailway_6(feature, layer) {
             var popupContent = '\
                 <h5>Proposed Primary Trail</h5>\
                 <div class="feedback-box">\
@@ -391,32 +351,44 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MCP_PrimaryTrailway10_7_0() {
+        function style_PrimaryTrailway_6_0() {
             return {
-                pane: 'pane_MCP_PrimaryTrailway10_7',
+                pane: 'pane_PrimaryTrailway_6',
                 opacity: 1,
-                color: 'rgba(219,30,42,1.0)',
-                dashArray: '5,10',
+                color: 'rgba(255,255,255,0.75)',
+                dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 4.0,
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_MCP_PrimaryTrailway10_7');
-        map.getPane('pane_MCP_PrimaryTrailway10_7').style.zIndex = 407;
-        map.getPane('pane_MCP_PrimaryTrailway10_7').style['mix-blend-mode'] = 'normal';
-        var layer_MCP_PrimaryTrailway10_7 = new L.geoJson(json_MCP_PrimaryTrailway10_7, {
+        function style_PrimaryTrailway_6_1() {
+            return {
+                pane: 'pane_PrimaryTrailway_6',
+                opacity: 1,
+                color: 'rgba(255,96,17,0.75)',
+                dashArray: '5 10',
+                lineCap: 'square',
+                lineJoin: 'miter',
+                weight: 6.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_PrimaryTrailway_6');
+        map.getPane('pane_PrimaryTrailway_6').style.zIndex = 406;
+        map.getPane('pane_PrimaryTrailway_6').style['mix-blend-mode'] = 'normal';
+        var layer_PrimaryTrailway_6 = new L.geoJson.multiStyle(json_PrimaryTrailway_6, {
             attribution: '<a href=""></a>',
-            pane: 'pane_MCP_PrimaryTrailway10_7',
-            onEachFeature: pop_MCP_PrimaryTrailway10_7,
-            style: style_MCP_PrimaryTrailway10_7_0,
+            pane: 'pane_PrimaryTrailway_6',
+            onEachFeature: pop_PrimaryTrailway_6,
+            styles: [style_PrimaryTrailway_6_0,style_PrimaryTrailway_6_1,]
         });
-        bounds_group.addLayer(layer_MCP_PrimaryTrailway10_7);
-        map.addLayer(layer_MCP_PrimaryTrailway10_7);
-        function pop_MCP_ProposedSecondaryDGTrail_8(feature, layer) {
-            var popupContent = '\
-                <h5>Proposed Secondary D.G. Trail</h5>\
+        bounds_group.addLayer(layer_PrimaryTrailway_6);
+        map.addLayer(layer_PrimaryTrailway_6);
+        function pop_ProposedSecondaryDGTrail_7(feature, layer) {
+             var popupContent = '\
+                <h5>Proposed Secondary DG Trail</h5>\
                 <div class="feedback-box">\
                 <img id="mapimg" src="assets/dg_trail.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
                 <label for="feedback">Submit your comments below:</label>\
@@ -424,33 +396,45 @@
                 </div>\
                 <input type="submit"></input>\
                 ';
-            layer.bindPopup(popupContent, {maxHeight: 500});
+            layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MCP_ProposedSecondaryDGTrail_8_0() {
+        function style_ProposedSecondaryDGTrail_7_0() {
             return {
-                pane: 'pane_MCP_ProposedSecondaryDGTrail_8',
+                pane: 'pane_ProposedSecondaryDGTrail_7',
                 opacity: 1,
-                color: 'rgba(84,176,74,1.0)',
-                dashArray: '5,10',
-                lineCap: 'round',
-                lineJoin: 'round',
-                weight: 3.0,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_MCP_ProposedSecondaryDGTrail_8');
-        map.getPane('pane_MCP_ProposedSecondaryDGTrail_8').style.zIndex = 408;
-        map.getPane('pane_MCP_ProposedSecondaryDGTrail_8').style['mix-blend-mode'] = 'normal';
-        var layer_MCP_ProposedSecondaryDGTrail_8 = new L.geoJson(json_MCP_ProposedSecondaryDGTrail_8, {
+        function style_ProposedSecondaryDGTrail_7_1() {
+            return {
+                pane: 'pane_ProposedSecondaryDGTrail_7',
+                opacity: 1,
+                color: 'rgba(255,252,25,1.0)',
+                dashArray: '5 10',
+                lineCap: 'square',
+                lineJoin: 'round',
+                weight: 4.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_ProposedSecondaryDGTrail_7');
+        map.getPane('pane_ProposedSecondaryDGTrail_7').style.zIndex = 407;
+        map.getPane('pane_ProposedSecondaryDGTrail_7').style['mix-blend-mode'] = 'normal';
+        var layer_ProposedSecondaryDGTrail_7 = new L.geoJson.multiStyle(json_ProposedSecondaryDGTrail_7, {
             attribution: '<a href=""></a>',
-            pane: 'pane_MCP_ProposedSecondaryDGTrail_8',
-            onEachFeature: pop_MCP_ProposedSecondaryDGTrail_8,
-            style: style_MCP_ProposedSecondaryDGTrail_8_0,
+            pane: 'pane_ProposedSecondaryDGTrail_7',
+            onEachFeature: pop_ProposedSecondaryDGTrail_7,
+            styles: [style_ProposedSecondaryDGTrail_7_0,style_ProposedSecondaryDGTrail_7_1,]
         });
-        bounds_group.addLayer(layer_MCP_ProposedSecondaryDGTrail_8);
-        map.addLayer(layer_MCP_ProposedSecondaryDGTrail_8);
-        function pop_MCP_ProposedDGTrail_9(feature, layer) {
+        bounds_group.addLayer(layer_ProposedSecondaryDGTrail_7);
+        map.addLayer(layer_ProposedSecondaryDGTrail_7);
+        function pop_ProposedDGTrail_8(feature, layer) {
             var popupContent = '\
                 <h5>Proposed D.G. Trail</h5>\
                 <div class="feedback-box">\
@@ -463,30 +447,42 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MCP_ProposedDGTrail_9_0() {
+        function style_ProposedDGTrail_8_0() {
             return {
-                pane: 'pane_MCP_ProposedDGTrail_9',
+                pane: 'pane_ProposedDGTrail_8',
                 opacity: 1,
-                color: 'rgba(153,41,1,1.0)',
-                dashArray: '10,5',
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 3.0,
+                weight: 4.0,
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_MCP_ProposedDGTrail_9');
-        map.getPane('pane_MCP_ProposedDGTrail_9').style.zIndex = 409;
-        map.getPane('pane_MCP_ProposedDGTrail_9').style['mix-blend-mode'] = 'normal';
-        var layer_MCP_ProposedDGTrail_9 = new L.geoJson(json_MCP_ProposedDGTrail_9, {
+        function style_ProposedDGTrail_8_1() {
+            return {
+                pane: 'pane_ProposedDGTrail_8',
+                opacity: 1,
+                color: 'rgba(194,109,38,1.0)',
+                dashArray: '5 10',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_ProposedDGTrail_8');
+        map.getPane('pane_ProposedDGTrail_8').style.zIndex = 408;
+        map.getPane('pane_ProposedDGTrail_8').style['mix-blend-mode'] = 'normal';
+        var layer_ProposedDGTrail_8 = new L.geoJson.multiStyle(json_ProposedDGTrail_8, {
             attribution: '<a href=""></a>',
-            pane: 'pane_MCP_ProposedDGTrail_9',
-            onEachFeature: pop_MCP_ProposedDGTrail_9,
-            style: style_MCP_ProposedDGTrail_9_0,
+            pane: 'pane_ProposedDGTrail_8',
+            onEachFeature: pop_ProposedDGTrail_8,
+            styles: [style_ProposedDGTrail_8_0,style_ProposedDGTrail_8_1,]
         });
-        bounds_group.addLayer(layer_MCP_ProposedDGTrail_9);
-        map.addLayer(layer_MCP_ProposedDGTrail_9);
-        function pop_RecNodes_10(feature, layer) {
+        bounds_group.addLayer(layer_ProposedDGTrail_8);
+        map.addLayer(layer_ProposedDGTrail_8);
+        function pop_RecreationNodes_9(feature, layer) {
             var popupContent = '\
                 <h5>Proposed Recreation Node</h5>\
                 <div class="feedback-box">\
@@ -496,52 +492,52 @@
                 </div>\
                 <input type="submit"></input>\
                 ';
-            layer.bindPopup(popupContent, {maxHeight: 450});
+            layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_RecNodes_10_0() {
+        function style_RecreationNodes_9_0() {
             return {
-                pane: 'pane_RecNodes_10',
-                radius: geoStyle(50.0),
+                pane: 'pane_RecreationNodes_9',
+                radius: 14.0,
                 opacity: 1,
-                color: 'rgba(239,155,76,1)',
+                color: 'rgba(255,255,255,1)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 2.0,
                 fill: true,
-                fillOpacity: 0.8,
-                fillColor: 'rgba(239,155,76,0.8)',
+                fillOpacity: 1,
+                fillColor: 'rgba(239,167,0,0.8)',
             }
         }
-        map.createPane('pane_RecNodes_10');
-        map.getPane('pane_RecNodes_10').style.zIndex = 410;
-        map.getPane('pane_RecNodes_10').style['mix-blend-mode'] = 'normal';
-        var layer_RecNodes_10 = new L.geoJson(json_RecNodes_10, {
+        map.createPane('pane_RecreationNodes_9');
+        map.getPane('pane_RecreationNodes_9').style.zIndex = 409;
+        map.getPane('pane_RecreationNodes_9').style['mix-blend-mode'] = 'normal';
+        var layer_RecreationNodes_9 = new L.geoJson(json_RecreationNodes_9, {
             attribution: '<a href=""></a>',
-            pane: 'pane_RecNodes_10',
-            onEachFeature: pop_RecNodes_10,
+            pane: 'pane_RecreationNodes_9',
+            onEachFeature: pop_RecreationNodes_9,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_RecNodes_10_0(feature));
+                return L.circleMarker(latlng, style_RecreationNodes_9_0(feature));
             },
         });
-        bounds_group.addLayer(layer_RecNodes_10);
-        map.addLayer(layer_RecNodes_10);
+        bounds_group.addLayer(layer_RecreationNodes_9);
+        map.addLayer(layer_RecreationNodes_9);
         map.on("zoomend", function(e) {
             if (map.getZoom() <= 19 && map.getZoom() >= 8) {
-                map.addLayer(layer_MariposaCreekParkwayExtent_1);
+                map.addLayer(layer_MariposaCreekParkwayExtents_2);
             } else if (map.getZoom() > 19 || map.getZoom() < 8) {
-                map.removeLayer(layer_MariposaCreekParkwayExtent_1);
+                map.removeLayer(layer_MariposaCreekParkwayExtents_2);
             }
         });
             if (map.getZoom() <= 19 && map.getZoom() >= 8) {
-                map.addLayer(layer_MariposaCreekParkwayExtent_1);
+                map.addLayer(layer_MariposaCreekParkwayExtents_2);
             } else if (map.getZoom() > 19 || map.getZoom() < 8) {
-                map.removeLayer(layer_MariposaCreekParkwayExtent_1);
+                map.removeLayer(layer_MariposaCreekParkwayExtents_2);
             }
         var title = new L.Control();
         title.onAdd = function (map) {
@@ -553,32 +549,15 @@
         //     this._div.innerHTML = '<h2>Mariposa Creek Parkway - Community Feedback</h2>';
         // };
         // title.addTo(map);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/RecreationNodes_9.png" /> Recreation Nodes': layer_RecreationNodes_9,'<img src="legend/ProposedDGTrail_8.png" /> Proposed DG Trail': layer_ProposedDGTrail_8,'<img src="legend/ProposedSecondaryDGTrail_7.png" /> Proposed Secondary DG Trail': layer_ProposedSecondaryDGTrail_7,'<img src="legend/PrimaryTrailway_6.png" /> Primary Trailway': layer_PrimaryTrailway_6,'<img src="legend/ProposedBikePathClassI_5.png" /> Proposed Bike Path - Class I': layer_ProposedBikePathClassI_5,'<img src="legend/ProposedBikeLaneClassII_4.png" /> Proposed Bike Lane - Class II': layer_ProposedBikeLaneClassII_4,'<img src="legend/ProposedBikeLaneClassIII_3.png" /> Proposed Bike Lane - Class III': layer_ProposedBikeLaneClassIII_3,'<img src="legend/MariposaCreekParkwayExtents_2.png" /> Mariposa Creek Parkway Extents': layer_MariposaCreekParkwayExtents_2,"Aerial Map": overlay_AerialMap_1,"Open Street Map": overlay_OpenStreetMap_0,},{collapsed:false}).addTo(map);
         setBounds();
-        newM2px();
-
-            layer_MariposaCreekParkwayExtent_1.setStyle(style_MariposaCreekParkwayExtent_1_0);
-            layer_RecNodes_10.setStyle(style_RecNodes_10_0);
-        map.on("zoomend", function(){
-            newM2px();
-
-            layer_MariposaCreekParkwayExtent_1.setStyle(style_MariposaCreekParkwayExtent_1_0);
-            layer_RecNodes_10.setStyle(style_RecNodes_10_0);
-        });
         </script>
-	</div>
-
-<!-- END LEAFLET MAP CONTAINER -->
-
-	<div id="legend-container">
-
-		<div class="map-h1"><h1>Legend</h1></div>
-		
-	</div>
-</main>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/communitymap.js"></script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+        <script type="text/javascript" src="js/communitymap.js"></script>
+    </body>
 </html>

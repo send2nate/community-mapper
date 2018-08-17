@@ -19,7 +19,69 @@
 
         <title>Mariposa Creek Parkway Plan - Interactive Map</title>
 
-<!-- BEGIN MODAL DIV -->
+
+
+<!-- BEGIN BOOTSTRAP NAVBAR -->
+ 
+       <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light py-0"> 
+        <a class="navbar-brand" href="#"><img id="brand-logo-quad" src="assets\quadrigalogoweb.png"></a>
+        <a class="navbar-brand" href="#"><img id="brand-logo-mariposa" src="assets\mariposa_logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav ml-auto py-0">
+          <li class="nav-item py-0">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item py-0">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Instructions</a>
+          </li>
+          <li class="nav-item py-0">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@Contact"><i class="fas fa-question-circle"></i></a>
+          </li>
+         
+        </ul>
+    
+    </nav>
+    </div>
+
+<!-- END BOOTSTRAP NAVBAR -->
+
+<!-- BEGIN INSTRUCTIONAL MODAL -->
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalCenterTitle">Map Instructions</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <h3>Map Instructions</h3> -->
+        <p>Zoom and Pan on the map using the buttons or your mousewheel! Explore the Mariposa Creek Parkway Plan proposed improvements.</p>
+        
+        <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-plus fa-2x"></i></span><span class="modal-span">Zoom in</span></li> 
+            <li><span class="fa-li"><i class="fas fa-minus fa-2x"></i></span><span class="modal-span">Zoom out</span></li>
+            <li><span class="fa-li"><i class="fas fa-ruler fa-2x"></i></span><span class="modal-span">Measure a map feature</span></li> 
+            <li><span class="fa-li"><i class="fas fa-arrow-circle-right fa-2x"></i></span><span class="modal-span">Open the map feature toggle menu</span></li>
+            <li><span class="fa-li"><i class="fas fa-check-square fa-2x"></i></span><span class="modal-span">Toggle specific map layer</span></li>
+        </ul>
+       <strong><p>Click on a map feature to learn more about it, and leave your opinion!</p></strong> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END INSTRUCTIONAL MODAL -->
+
+<!-- BEGIN QUESTION MODAL DIV -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -50,34 +112,7 @@
   </div>
 </div>
 
-<!-- END MODAL DIV -->
-
-<!-- BEGIN BOOTSTRAP NAVBAR -->
- 
-       <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light py-0"> 
-        <a class="navbar-brand" href="#"><img id="brand-logo-quad" src="assets\quadrigalogoweb.png"></a>
-        <a class="navbar-brand" href="#"><img id="brand-logo-mariposa" src="assets\mariposa_logo.png"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav nav ml-auto py-0">
-          <li class="nav-item py-0">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item py-0">
-            <a class="nav-link" href="#">Instructions</a>
-          </li>
-          <li class="nav-item py-0">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@Contact">Questions?</a>
-          </li>
-         
-        </ul>
-    
-    </nav>
-    </div>
-
-<!-- END BOOTSTRAP NAVBAR -->
+<!-- END QUESTION MODAL DIV -->
 
     </head>
     <body>
@@ -85,8 +120,8 @@
 <!-- BEGIN SIDENAV POP-OUT -->
 
       <div id="mySidenav" class="sidenav">
-        <h1>What's this about?</h1>
-        <p class="p-nav">Zoom and Pan on the map to explore the Mariposa Creek Parkway Plan proposed improvedments.</p>
+        <h1 class="sideh1">We want your feedback!</h1>
+        <p class="p-nav">Click on the buttons below to hide or show various proposed improvements. <strong>Click</strong> on a map feature to leave your feedback!</p>
           <div id="button-container">
           <a id="node-layer" href="#"><button type="button" class="btn btn-light">Proposed Nodes</button></a>
           <a id="primary-trail-layer" href="#"><button type="button" class="btn btn-light">Proposed Parkway Trail</button></a>

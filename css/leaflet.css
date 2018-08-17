@@ -112,6 +112,7 @@
 
 .leaflet-control {
 	position: relative;
+	top: 80px;
 	z-index: 800;
 	pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
 	pointer-events: auto;
@@ -132,6 +133,7 @@
 	bottom: 0;
 	}
 .leaflet-left {
+
 	left: 0;
 	}
 .leaflet-control {
@@ -448,7 +450,8 @@
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
 	box-shadow: none;
-	margin-top: 80px !important; /* NUDGE LEAFLET CONTROL BARS TO MAKE ROOM FOR NAVBAR*/
+	top: 80px;
+	/*margin-top: 80px !important;*/ /* NUDGE LEAFLET CONTROL BARS TO MAKE ROOM FOR NAVBAR*/
 	}
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {

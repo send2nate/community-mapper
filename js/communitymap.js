@@ -22,11 +22,13 @@ $("#node-layer").click(function(event) {
 
 $("#primary-trail-layer").click(function(event) {
     event.preventDefault();
-    if(map.hasLayer(layer_PrimaryTrailway_6)) {
+    if(map.hasLayer(layer_PrimaryTrailway_6) || (map.hasLayer(layer_ProposedDGTrail_8)) ) {
         $(this).removeClass('selected');
         map.removeLayer(layer_PrimaryTrailway_6);
+        map.removeLayer(layer_ProposedDGTrail_8);
     } else {
-        map.addLayer(layer_PrimaryTrailway_6);        
+        map.addLayer(layer_PrimaryTrailway_6);
+        map.addLayer(layer_ProposedDGTrail_8);        
         $(this).addClass('selected');
    }
 });

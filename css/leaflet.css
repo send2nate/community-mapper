@@ -448,6 +448,7 @@
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
 	box-shadow: none;
+	margin-top: 80px !important; /* NUDGE LEAFLET CONTROL BARS TO MAKE ROOM FOR NAVBAR*/
 	}
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {

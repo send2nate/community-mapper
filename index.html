@@ -19,6 +19,39 @@
 
         <title>Mariposa Creek Parkway Plan - Interactive Map</title>
 
+<!-- BEGIN MODAL DIV -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">  
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END MODAL DIV -->
+
 <!-- BEGIN BOOTSTRAP NAVBAR -->
  
        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light py-0"> 
@@ -36,7 +69,7 @@
             <a class="nav-link" href="#">Instructions</a>
           </li>
           <li class="nav-item py-0">
-            <a class="nav-link" href="#">Questions?</a>
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@Contact">Questions?</a>
           </li>
          
         </ul>
@@ -174,11 +207,15 @@
         bounds_group.addLayer(layer_MariposaCreekParkwayExtents_2);
         map.addLayer(layer_MariposaCreekParkwayExtents_2);
         function pop_ProposedBikeLaneClassIII_3(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                </table>';
+             var popupContent = '\
+                <h5>Proposed Class III Bike Lane</h5>\
+                <div class="feedback-box">\
+                <img id="mapimg" src="assets/class3bikelane200px.jpg" style="border:2px solid white; border-radius: 10px; margin-bottom: 5px;" />\
+                <label for="feedback">Submit your comments below:</label>\
+                <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
+                </div>\
+                <input class="btn btn-primary" type="submit" value="Submit"></input>\
+                ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
@@ -225,7 +262,7 @@
                 <label for="feedback">Submit your comments below:</label>\
                 <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
                 </div>\
-                <input type="submit"></input>\
+                <input class="btn btn-primary" type="submit" value="Submit"></input>\
                 ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
@@ -273,7 +310,7 @@
                 <label for="feedback">Submit your comments below:</label>\
                 <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
                 </div>\
-                <input type="submit"></input>\
+                <input class="btn btn-primary" type="submit" value="Submit"></input>\
                 ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
@@ -321,7 +358,7 @@
                 <label for="feedback">Submit your comments below:</label>\
                 <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
                 </div>\
-                <input type="submit"></input>\
+                <input class="btn btn-primary" type="submit" value="Submit"></input>\
                 ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
@@ -369,7 +406,7 @@
                 <label for="feedback">Submit your comments below:</label>\
                 <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
                 </div>\
-                <input type="submit"></input>\
+                <input class="btn btn-primary" type="submit" value="Submit"></input>\
                 ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
@@ -417,7 +454,7 @@
                 <label for="feedback">Submit your comments below:</label>\
                 <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
                 </div>\
-                <input type="submit"></input>\
+               <input class="btn btn-primary" type="submit" value="Submit"></input>\
                 ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
@@ -465,7 +502,7 @@
                 <label for="feedback">Submit your comments below:</label>\
                 <textarea id="feedback" name="feedback" rows="3" cols="20" maxlength="200" wrap="hard"></textarea>\
                 </div>\
-                <input type="submit"></input>\
+                <input class="btn btn-primary" type="submit" value="Submit"></input>\
                 ';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
